@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+<div class="signup-form">
+    <h1>Shrink Url</h1>
+<form action="/" method="post">
+   
+    <input type="url" name="URL" required autocomplete="off" class="txtbtn" placeholder="Enter URL" id="URL">
+    <button type="submit" class="signup-b">Shrink</button>
+
+  </form>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Given Url</th>
+            <th>Shrinked Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% shrinkedUrls.forEach(cell=>{ %>
+            <tr>
+                <td><a href="<%= cell.full %>"><%= cell.full %></a></td>
+                <td><a href="<%= cell.short %>"><%= cell.short %></a></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%- include('partials/footer') %>
